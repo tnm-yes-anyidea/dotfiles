@@ -20,15 +20,20 @@ return {
   },
   {
     "nvim-tree/nvim-tree.lua",
-    cmd = "NvimTreeToggle",
-    lazy = true,
+    lazy = false, -- Load immediately so it can hijack directories
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
       { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
     },
     config = function()
       require("nvim-tree").setup({
-        sort_by = "case_sensitive",
+        hijack_netrw = true,
+        sync_root_with_cwd = true,
+        respect_buf_cwd = true,
+        update_focused_file = {
+          enable = true,
+          update_root = true,
+        },
         view = {
           width = 30,
           adaptive_size = true,
@@ -47,14 +52,14 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
     config = function()
       local ok, configs = pcall(require, "nvim-treesitter.configs")
       if not ok then return end
 
       configs.setup({
-        ensure_installed = { "lua", "vim", "python", "go", "c", "cpp", "javascript", "typescript", "json" },
+        ensure_installed = { "lua", "vim", "python", "go", "c", "cpp", "javascript", "typescript", "json", "html" },
         highlight = { enable = true },
         sync_install = false,
         indent = { enable = true },
