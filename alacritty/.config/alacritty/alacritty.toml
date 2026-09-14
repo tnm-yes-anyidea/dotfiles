@@ -1,0 +1,53 @@
+# General Window Settings (Matches your 80x24 initial size)
+[window]
+dimensions = { columns = 80, lines = 24 }
+padding = { x = 4, y = 4 }
+
+# Environment Settings (Tells system to use 256 colors)
+[env]
+TERM = "xterm-256color"
+
+# Automatically drop straight into Zsh
+[terminal.shell]
+program = "/bin/zsh"
+args = ["--login"]
+
+# Font Settings (Matches Hack 16)
+[font]
+normal = { family = "Hack", style = "Regular" }
+bold = { family = "Hack", style = "Bold" }
+italic = { family = "Hack", style = "Italic" }
+size = 16.0
+
+# Cursor Settings (Matches Block cursor)
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+
+# Scrolling
+[scrolling]
+history = 100000
+
+# Color Scheme: High-Contrast Solarized Dark (GNOME Terminal Match)
+[colors.primary]
+background = "#002b36" 
+foreground = "#ffffff" 
+
+[colors.normal]
+black   = "#073642" 
+red     = "#dc322f" 
+green   = "#4e9a06" 
+yellow  = "#b58900" 
+blue    = "#268bd2" # Glowing blue for readable ls folders
+magenta = "#d33682" 
+cyan    = "#2aa198" 
+white   = "#eee8d5" 
+
+[colors.bright]
+black   = "#586e75" 
+red     = "#cb4b16" 
+green   = "#8ae234" # FIX: Gives your prompt & msfinstall that vibrant light green
+yellow  = "#657b83" 
+blue    = "#268bd2" # FIX: Forces bold folders to use your glowing blue instead of gray
+magenta = "#6c71c4" 
+cyan    = "#93a1a1" 
+white   = "#fdf6e3"

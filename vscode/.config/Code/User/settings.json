@@ -1,0 +1,174 @@
+{
+    // ── Privacy & Telemetry ──────────────────────────────────────────────────
+    "telemetry.telemetryLevel": "off",
+    "telemetry.feedback.enabled": false,
+    "telemetry.editStats.enabled": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "typescript.surveys.enabled": false,
+    "appService.zipIgnoreTelemetry": true,
+
+    // ── C/C++ Configuration ──────────────────────────────────────────────────
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.autocomplete": "default",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.formatting": "clangFormat",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+
+    // ── Python Configuration ─────────────────────────────────────────────────
+    "python.defaultInterpreterPath": "/home/tanmoy/myprogs/.main_env",
+    "python.languageServer": "Pylance",
+    "basedpyright.analysis.indexing": false,
+    "basedpyright.analysis.diagnosticMode": "openFilesOnly",
+    "basedpyright.disableLanguageServices": false,
+    "basedpyright.typeCheckingMode": "standard",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        }
+    },
+    "ruff.enable": true,
+
+    // ── Copilot ──────────────────────────────────────────────────────────────
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "cpp": true,
+        "python": false,
+        "go": false
+    },
+
+    // ── Editor appearance ────────────────────────────────────────────────────
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'JetBrains Mono', 'Ubuntu Mono', 'Liberation Mono'",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 24,
+    "editor.letterSpacing": 0.4,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+
+    // ── Terminal appearance ──────────────────────────────────────────────────
+    "terminal.integrated.fontFamily": "'Hack', 'DejaVu Sans Mono'",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.cursorBlinking": false,
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.externalBrowser": "brave-browser",
+    "workbench.editor.empty.hint": "hidden",
+
+    // 1. UI Elements (Backgrounds, Borders, Lines)
+    "workbench.colorCustomizations": {
+        "[Solarized Light]": {
+            "editor.selectionBackground": "#d1c7a3",
+            "editor.selectionHighlightBackground": "#efe4c0",
+            "editor.findMatchBorder": "#b58900"
+        },
+        "[GitHub Dark Dimmed]": {
+            "editor.background": "#222436", 
+            "sideBar.background": "#1e2030",
+            "activityBar.background": "#1e2030",
+            "editor.lineHighlightBackground": "#2d3149",
+            "editor.selectionBackground": "#3e4465",
+            "editor.selectionHighlightBackground": "#2d3149",
+            "editor.findMatchBackground": "#634f2266",
+            "editor.findMatchBorder": "#ae8c33",
+            "focusBorder": "#00000000",
+            "tab.activeBorder": "#00000000",
+            "editorBracketMatch.border": "#444c56",
+            "editorIndentGuide.activeBackground1": "#3b4261",
+            "editorGutter.modifiedBackground": "#3b4261"
+        },
+        "[Solarized Dark]": {
+            // Drops the background down from green-teal to a deep, glare-absorbing ocean ink
+            "editor.background": "#001e26",
+            "sideBar.background": "#00171d",
+            "activityBar.background": "#00171d",
+            // Smooths out UI panel borders to eliminate sharp visual frames
+            "focusBorder": "#00000000",
+            "tab.activeBorder": "#00000000",
+            "editor.lineHighlightBackground": "#002630",
+            "editor.selectionBackground": "#073642",
+            "editor.selectionHighlightBackground": "#002b36",
+            "editorIndentGuide.activeBackground1": "#073642"
+        }
+    },
+
+    // 2. Syntax Elements (Text, Keywords, Code Colors)
+    "editor.tokenColorCustomizations": {
+        "[GitHub Dark Dimmed]": {
+            "textMateRules": [
+                {
+                    "scope": ["keyword", "storage.type", "storage.modifier"],
+                    "settings": { "foreground": "#b4befe" }
+                },
+                {
+                    "scope": ["entity.name.function", "support.function"],
+                    "settings": { "foreground": "#89b4fa" }
+                },
+                {
+                    "scope": ["string", "string.template", "punctuation.definition.string"],
+                    "settings": { "foreground": "#a6e3a1" }
+                },
+                {
+                    "scope": ["comment", "punctuation.definition.comment"],
+                    "settings": { "foreground": "#585b70", "fontStyle": "italic" }
+                },
+                {
+                    "scope": ["variable", "variable.parameter", "variable.other"],
+                    "settings": { "foreground": "#cdd6f4" }
+                },
+                {
+                    "scope": ["constant.numeric", "constant.language", "support.constant"],
+                    "settings": { "foreground": "#f9e2af" }
+                }
+            ]
+        },
+        "[Solarized Dark]": {
+            "textMateRules": [
+                {
+                    // Tames the aggressive default magenta keywords down to a muted dusty rose
+                    "scope": ["keyword", "storage.type", "storage.modifier"],
+                    "settings": { "foreground": "#cb6b91" }
+                },
+                {
+                    // Calms down flashing cyan strings into a soft, readable sage-teal
+                    "scope": ["string", "string.template", "punctuation.definition.string"],
+                    "settings": { "foreground": "#3cb3a9" }
+                },
+                {
+                    // Adjusts function calls to a clean, non-piercing sky blue
+                    "scope": ["entity.name.function", "support.function"],
+                    "settings": { "foreground": "#4fa1db" }
+                },
+                {
+                    // Keeps base text readable but slightly lower contrast than stark white
+                    "scope": ["variable", "variable.parameter", "variable.other"],
+                    "settings": { "foreground": "#93a1a1" }
+                }
+            ]
+        }
+    },
+    "window.autoDetectColorScheme": true,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "never",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "chat.viewSessions.orientation": "stacked",
+    "update.showReleaseNotes": false
+}

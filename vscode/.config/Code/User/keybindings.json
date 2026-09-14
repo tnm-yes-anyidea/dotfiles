@@ -1,0 +1,69 @@
+[
+    // ── your existing ───────────────────────────────────────────
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+
+    // ── F2: rename symbol ───────────────────────────────────────
+    {
+        "key": "f2",
+        "command": "editor.action.rename",
+        "when": "editorFocus"
+    },
+
+    // ── F3: select debugger ─────────────────────────────────────
+    {
+        "key": "f3",
+        "command": "workbench.action.debug.selectandstart"
+    },
+
+    // ── F4 + Ctrl+P: find files ─────────────────────────────────
+    {
+        "key": "f4",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+
+    // ── F5: run if no breakpoints, debug if breakpoints set ─────
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.run",
+        "when": "!inDebugMode && !breakpointWidgetVisible"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode && breakpointWidgetVisible"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+
+
+    // ── Shift+F3: stop debugger ─────────────────────────────────
+    {
+        "key": "shift+f3",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
+    }
+]
