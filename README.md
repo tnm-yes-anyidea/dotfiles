@@ -1,5 +1,5 @@
 ## UPDATE: 2 october 2026
-### [Repository moved to ](https://codeberg.org/tnm-yes-anyidea/dotfiles)
+### [Repository moved to codeberg](https://codeberg.org/tnm-yes-anyidea/dotfiles)
 # ⚡ Neovim Development Environment
 
 A modular, fast, and feature-complete Neovim configuration built for competitive programming, multi-language software development, and interactive debugging.
