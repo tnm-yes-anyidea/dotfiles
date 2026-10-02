@@ -4,7 +4,12 @@
 
 # Ensure local binaries (including Starship and Go) take path precedence
 export PATH="$HOME/.local/bin:$PATH:~/go/bin"
+
+# Default Editor
 export EDITOR='nvim'
+
+# Cap Node.js memory usage to 2GB to prevent background processes from eating RAM
+export NODE_OPTIONS="--max-old-space-size=2048"
 
 # ==============================================================================
 # 2. PROMPT INITIALIZATION (STARSHIP)
@@ -42,35 +47,45 @@ bindkey '^[[A' up-line-or-beginning-search   # Maps Physical Up Arrow
 bindkey '^[[B' down-line-or-beginning-search # Maps Physical Down Arrow
 
 # ==============================================================================
-# 5. LIGHTWEIGHT PLUGIN MANAGEMENT (NO OH-MY-ZSH BLOAT)
+# 5. LIGHTWEIGHT PLUGIN MANAGEMENT (FEDORA PATHS)
 # ==============================================================================
 
 # Initialize native Zsh completion system cleanly using cache optimizations
 autoload -Uz compinit && compinit -C
 
-PLUGIN_DIR="$HOME/.zsh"
-
-# Load Standalone Autosuggestions
-if [ -f "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-  source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# Load Fedora's native Autosuggestions
+if [ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   # Force matching ghost-text previews to a distinct, legible light-grey color
   export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 fi
 
-# Load Standalone Syntax Highlighting (Must stay loaded absolute last)
-if [ -f "$PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-  source "$PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# Load Fedora's native Syntax Highlighting (Must stay loaded absolute last)
+if [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # ==============================================================================
 # 6. CUSTOM ALIASES & UTILITIES
 # ==============================================================================
 
-# Native UI Color Flags
+# Native UI Color Flags & Listing
 alias ls='ls --color=auto'
+alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
 
 # Application Shorthands
-alias bat='batcat'
-alias down='uv run ~/Musics/down.py'
+alias v='nvim'
+alias vim='nvim'
+alias vi='nvim'
+alias down='uv run ~/Music/down.py'
 
+# Fedora Package Management
+alias update='sudo dnf upgrade --refresh'
+alias clean='sudo dnf clean all'
+
+# Git Shorthands
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
